@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin | APIBA Pádel</title>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h2>Panel de Administración – APIBA Pádel</h2>
+    <button onclick="logout()">Cerrar sesión</button>
+  </header>
+
+  <section class="admin-form">
+    <h3>Nueva publicación</h3>
+
+    <input type="text" id="title" placeholder="Título">
+    <textarea id="content" placeholder="Contenido"></textarea>
+
+    <select id="category">
+      <option value="noticias">Noticias</option>
+      <option value="torneos">Torneos</option>
+      <option value="resultados">Resultados</option>
+    </select>
+
+    <button onclick="crearPost()">Publicar</button>
+  </section>
+
+  <section class="admin-list">
+    <h3>Publicaciones</h3>
+    <div id="lista"></div>
+  </section>
+
+  <!-- JS -->
+  <script src="js/supabase.js"></script>
+  <script src="js/panel.js"></script>
+</body>
+</html>

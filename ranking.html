@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ranking | APIBA Pádel</title>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h2>Ranking Oficial APIBA Pádel</h2>
+    <a href="index.html">⬅ Volver</a>
+  </header>
+
+  <section class="ranking">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Jugador</th>
+          <th>Puntos</th>
+        </tr>
+      </thead>
+      <tbody id="ranking"></tbody>
+    </table>
+  </section>
+
+  <!-- JS -->
+  <script src="js/supabase.js"></script>
+  <script src="js/ranking.js"></script>
+</body>
+</html>
