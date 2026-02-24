@@ -1,0 +1,134 @@
+apiba-padel/
+├── .htaccess
+├── admin/
+│   ├── _footer.php
+│   ├── _header.php
+│   ├── auth.php
+│   ├── cargar_ranking.php
+│   ├── cerrar_sesion_jugador.php
+│   ├── editar_jugador.php
+│   ├── editar_noticia.php
+│   ├── editar_ranking.php
+│   ├── editar_torneo.php
+│   ├── eliminar_inscripcion.php
+│   ├── equipos_unidos.php
+│   ├── exportar_inscriptos_csv.php
+│   ├── fixture.php
+│   ├── generar_carnet_jugador.php
+│   ├── guardar_jugador.php
+│   ├── guardar_noticia.php
+│   ├── guardar_nuevo_jugador.php
+│   ├── guardar_ranking.php
+│   ├── hash_admin.php
+│   ├── index.php
+│   ├── inscribir_jugador.php
+│   ├── inscripciones_jugador.php
+│   ├── inscriptos.php
+│   ├── jugadores.php
+│   ├── lib/
+│   │   └── upload.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── noticias.php
+│   ├── nueva_noticia.php
+│   ├── nuevo_jugador.php
+│   ├── nuevo_torneo.php
+│   ├── panel.php
+│   ├── prueba_upload.php
+│   ├── ranking.php
+│   ├── recalcular_ranking.php
+│   ├── reset_password_jugador.php
+│   ├── reset_password_jugador_guardar.php
+│   ├── torneo_puntos.php
+│   ├── torneo_puntos_guardar.php
+│   ├── torneos.php
+│   ├── upload_noticia.php
+│   └── ver_carnet_jugador.php
+│
+├── assets/
+│   ├── carnet_bg.jpg
+│   ├── css/
+│   │   ├── apiba-pro.css
+│   │   └── public.css
+│   ├── fonts/
+│   │   └── DejaVuSans.ttf
+│   ├── img/
+│   │   ├── hero.jpg
+│   │   ├── logo-apiba.png
+│   │   ├── logo.png
+│   │   └── user-placeholder.png
+│   └── js/
+│       ├── public_footer.php
+│       ├── public_header.php
+│       └── theme.js
+│
+├── config/
+│   ├── config.php
+│   ├── database.php
+│   └── db.php
+│
+├── includes/
+│   ├── site_footer.php
+│   ├── site_footer - copia.php
+│   ├── site_header.php
+│   └── site_header - copia.php
+│
+├── install/
+│   ├── install-temporal.php
+│   └── schema.sql
+│
+├── jugador/
+│   ├── auth.php
+│   ├── carnet.php
+│   ├── descargar_carnet.php
+│   ├── descargar_carnet_jpg.php
+│   ├── descargar_carnet_pdf.php
+│   ├── editar_perfil.php
+│   ├── generar_carnet.php
+│   ├── panel.php
+│   ├── perfil.php
+│   ├── ver.php
+│   └── ver_publico.php
+│
+├── lib/
+│   └── fpdf/
+│       ├── fpdf.php
+│       ├── font/
+│       └── makefont/
+│
+├── login/
+│   ├── login.php
+│   └── validar_login.php
+│
+├── noticias/
+│   └── ver.php
+│
+├── public/
+│   ├── jugador.php
+│   ├── noticia.php
+│   ├── noticias.php
+│   └── ranking.php
+│
+├── ranking/
+│   └── index.php
+│
+├── torneos/
+│   ├── fecha.php
+│   ├── index.php
+│   ├── inscribirse.php
+│   └── ver.php
+│
+├── uploads/
+│   ├── .htaccess
+│   ├── jugadores/   (fotos)
+│   ├── noticias/    (imágenes)
+│   ├── qr/          (QR carnets)
+│   ├── torneos/
+│   └── upload.php
+│
+├── index.php
+├── login.php
+├── logout.php
+├── logout_jugador.php
+├── registro.php
+└── sesion_cerrada.php

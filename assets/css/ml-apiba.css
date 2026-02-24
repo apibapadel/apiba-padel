@@ -1,0 +1,303 @@
+/* =========================================================
+   APiBA Pádel - UI estilo Mercado Libre (pero verde suave)
+   Cargar DESPUÉS de public.css y apiba-pro.css.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --ml-bg:#d3dbd7; /* off-white con tinte verde (menos gris) */
+  --ml-surface:#ffffff;
+  --ml-ink:#111827;
+  --ml-muted:#6b7280;
+  --ml-line:#e5e7eb;
+
+  --ml-brand:#1f9d4b;
+  --ml-brand2:#17813d;
+  --ml-brandSoft:#e9f8ef;
+
+  --ml-danger:#d0342c;
+  --ml-danger2:#b02a24;
+
+  --ml-radius:14px;
+  --ml-radius-sm:10px;
+  --ml-shadow: 0 10px 28px rgba(0,0,0,.10);
+  --ml-shadow2: 0 3px 10px rgba(0,0,0,.08);
+  --ml-focus: 0 0 0 3px rgba(31,157,75,.22);
+}
+
+/* ===== Global ===== */
+html,body{height:100%;}
+body{
+  background: linear-gradient(180deg, #c8d1cd 0%, var(--ml-bg) 18%, #dde3e0 100%) !important;
+  color:var(--ml-ink) !important;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container{ width: min(1180px, calc(100% - 32px)) !important; }
+
+a{ color: var(--ml-brand) !important; }
+a:hover{ text-decoration: underline; }
+
+/* ===== Public: Topbar tipo Mercado Libre ===== */
+.topbar{
+  background: var(--ml-brand) !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+  backdrop-filter: none !important;
+}
+.topbar__inner{ padding: 10px 0 !important; }
+.brand img{ filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
+
+.nav a{
+  color: rgba(255,255,255,.95) !important;
+  border-radius: 999px !important;
+  padding: 8px 10px !important;
+  border: 1px solid transparent !important;
+}
+.nav a:hover{ background: rgba(255,255,255,.14) !important; text-decoration:none !important; }
+.nav a.active{ background: rgba(255,255,255,.22) !important; color:#fff !important; }
+
+.page{ padding: 18px 0 28px !important; }
+
+/* ===== Cards / tablas / paneles ===== */
+.card, .table-wrap{
+  background: var(--ml-surface) !important;
+  border: 1px solid var(--ml-line) !important;
+  border-radius: var(--ml-radius) !important;
+  box-shadow: var(--ml-shadow2) !important;
+}
+
+table{
+  background: var(--ml-surface) !important;
+  border: 1px solid var(--ml-line) !important;
+  border-radius: var(--ml-radius) !important;
+  overflow:hidden !important;
+}
+th{ background:#f5f5f5 !important; color:var(--ml-ink) !important; font-weight:800 !important; }
+tr:hover td{ background:#fafafa !important; }
+
+/* ===== Inputs / selects ===== */
+input, select, textarea{
+  background:#fff !important;
+  color:var(--ml-ink) !important;
+  border:1px solid var(--ml-line) !important;
+  border-radius: var(--ml-radius-sm) !important;
+}
+input:focus, select:focus, textarea:focus{
+  outline:none !important;
+  box-shadow: var(--ml-focus) !important;
+  border-color: rgba(31,157,75,.55) !important;
+}
+
+/* ===== Botones ===== */
+.btn{
+  background: var(--ml-brand) !important;
+  color:#fff !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  border-radius: 999px !important;
+  box-shadow: var(--ml-shadow2) !important;
+}
+.btn:hover{ background: var(--ml-brand2) !important; opacity:1 !important; }
+.btn-soft{
+  background: rgba(255,255,255,.16) !important;
+  color:#fff !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+}
+.btn-soft:hover{ background: rgba(255,255,255,.24) !important; }
+.btn-danger{ background: var(--ml-danger) !important; }
+.btn-danger:hover{ background: var(--ml-danger2) !important; }
+
+/* ===== Badges ===== */
+.badge{
+  background: #f3f4f6 !important;
+  border: 1px solid var(--ml-line) !important;
+  color: var(--ml-ink) !important;
+}
+
+/* ===== Admin: header verde + contenido blanco ===== */
+.wrap{ background: transparent !important; box-shadow:none !important; padding:0 !important; }
+.wrap > .top{
+  background: var(--ml-brand) !important;
+  padding: 12px 16px !important;
+  border-radius: var(--ml-radius) !important;
+  box-shadow: var(--ml-shadow) !important;
+}
+.wrap > .top *{ color:#fff !important; }
+.wrap > .top .pill{ background: rgba(255,255,255,.18) !important; border:1px solid rgba(255,255,255,.20) !important; }
+
+.wrap > .nav{
+  margin-top: 10px !important;
+  background: var(--ml-surface) !important;
+  border: 1px solid var(--ml-line) !important;
+  border-radius: var(--ml-radius) !important;
+  padding: 10px 12px !important;
+  box-shadow: var(--ml-shadow2) !important;
+}
+.wrap > .nav a{ background: transparent !important; color: var(--ml-ink) !important; border-radius: 999px !important; }
+.wrap > .nav a:hover{ background:#f5f5f5 !important; }
+
+.wrap hr{ border-top:1px solid var(--ml-line) !important; }
+
+/* Footer público si existe */
+.footer{ background: var(--ml-surface) !important; border-top:1px solid var(--ml-line) !important; }
+
+
+/* ===== Ajustes finos solicitados (ranking, home, torneos, perfil) ===== */
+.ranking-select{ width:auto !important; min-width: 240px; max-width: 100%; }
+@media (max-width:560px){ .ranking-select{ min-width: 100%; } }
+
+/* Home: mejorar padding y “Próximos torneos” estilo marketplace */
+#card-proximos-torneos .card__body{ padding: 14px !important; }
+.ml-list{ display:grid; gap:12px; }
+.ml-item{
+  display:flex; gap:12px; align-items:stretch;
+  border:1px solid var(--ml-line);
+  border-radius: var(--ml-radius);
+  overflow:hidden;
+  background: var(--ml-surface);
+}
+.ml-item__img{
+  width: 120px; flex:0 0 120px;
+  background:#f3f4f6;
+  background-size: cover; background-position:center;
+  position:relative;
+}
+.ml-item__img::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,0));
+}
+.ml-item__body{ padding:12px; flex:1; min-width:0; }
+.ml-item__title{ font-weight:800; margin:0; font-size:1.02rem; }
+.ml-item__meta{ margin-top:6px; display:flex; gap:8px; flex-wrap:wrap; }
+.ml-item__cta{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+
+/* Torneos: cards con “media” de sede */
+.torneo-card .torneo-media{
+  height: 88px;
+  border-radius: 12px;
+  overflow:hidden;
+  background:#f3f4f6;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 1px solid var(--ml-line);
+  margin-bottom: 12px;
+}
+.torneo-card .torneo-media::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.00) 0%, rgba(0,0,0,.35) 100%);
+}
+.torneo-card .torneo-media .torneo-media__label{
+  position:absolute; left:10px; bottom:10px;
+  display:inline-flex; align-items:center; gap:8px;
+  color:#fff;
+  font-weight:900;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.22);
+}
+
+/* Torneo detalle: hero con imagen de sede */
+.torneo-hero--withimg{
+  border-radius: var(--ml-radius);
+  border: 1px solid var(--ml-line);
+  background: var(--ml-surface);
+  box-shadow: var(--ml-shadow2);
+  overflow:hidden;
+}
+.torneo-hero--withimg .torneo-hero__img{
+  height: 160px;
+  background:#f3f4f6;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.torneo-hero--withimg .torneo-hero__img::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.45) 100%);
+}
+.torneo-hero--withimg .torneo-hero__img .crumb{
+  position:absolute; left:14px; top:12px;
+  display:inline-flex; gap:8px; flex-wrap:wrap;
+  background: rgba(255,255,255,.90);
+  border:1px solid rgba(0,0,0,.10);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  color: var(--ml-ink);
+}
+.torneo-hero--withimg .torneo-hero__content{
+  padding: 14px 16px 16px;
+}
+
+/* Perfil: cards en mobile para inscripciones */
+#card-mis-inscripciones .table-wrap{ overflow:auto; }
+#card-mis-inscripciones .insc-cards{ display:none; }
+@media (max-width: 720px){
+  #card-mis-inscripciones .table-wrap{ display:none; }
+  #card-mis-inscripciones .insc-cards{ display:grid; gap:12px; }
+  #card-mis-inscripciones .insc-card{
+    border:1px solid var(--ml-line);
+    border-radius: var(--ml-radius);
+    padding:12px;
+    background: var(--ml-surface);
+    box-shadow: var(--ml-shadow2);
+  }
+  #card-mis-inscripciones .insc-top{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+  #card-mis-inscripciones .insc-title{ font-weight:900; margin:0; }
+  #card-mis-inscripciones .insc-meta{ margin-top:8px; display:grid; gap:6px; }
+  #card-mis-inscripciones .insc-actions{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+}
+
+
+/* Sede logo dentro del “pill” (reemplaza texto) */
+.torneo-card .torneo-media .torneo-media__label .sede-logo{
+  height: 22px;
+  width: auto;
+  display:block;
+  border-radius: 6px;
+  background: rgba(255,255,255,.92);
+  padding: 2px 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+.torneo-card .torneo-media .torneo-media__label .sede-text{font-weight:900;}
+
+/* Sede logo en breadcrumb/hero */
+.crumb .sede-logo{height:22px;width:auto;display:block;border-radius:6px;background:rgba(255,255,255,.92);padding:2px 6px;}
+
+/* Home: scroll sedes (tipo ML carrusel) */
+.sedes-scroll{
+  display:flex;
+  gap:12px;
+  overflow:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:6px;
+}
+.sedes-scroll::-webkit-scrollbar{height:8px}
+.sedes-scroll::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:999px}
+.sede-tile{
+  flex:0 0 220px;
+  scroll-snap-align:start;
+  border:1px solid var(--ml-line);
+  border-radius:12px;
+  overflow:hidden;
+  background: var(--ml-surface);
+  box-shadow: var(--ml-shadow);
+}
+.sede-tile__img{display:block;height:120px;background-size:cover;background-position:center}
+.sede-tile__cap{display:block;padding:10px 12px;font-weight:800;font-size:.92rem}
+@media (max-width:520px){ .sede-tile{flex-basis:78vw} .sede-tile__img{height:110px} }
+
+
+/* ===== Readability hardening (avoid white text on white cards) ===== */
+.card, .table-wrap, table{ color: var(--ml-ink) !important; }
+.card *{ color: inherit; }
+.muted{ color: var(--ml-muted) !important; }
+.badge{ color: inherit; }

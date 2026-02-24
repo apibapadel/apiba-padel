@@ -1,0 +1,35 @@
+<?php
+// 1. EL SDK: Se descarga instalando Composer en tu carpeta 'apiba' 
+// y ejecutando el comando: composer require mercadopago/dx-php
+require_once 'vendor/autoload.php';
+
+// 2. EL ACCESS TOKEN: Es tu "llave secreta". 
+// Empieza siempre con "APP_USR-..." (para cobrar de verdad) 
+// o "TEST-..." (para hacer pruebas sin usar dinero real).
+MercadoPago\SDK::setAccessToken("APP_USR-1234567890123456-021215-abcd1234efgh5678-123456789"); 
+
+$preference = new MercadoPago\Preference();
+
+$item = new MercadoPago\Item();
+$item->title = "Generación de Código QR - APIBA";
+$item->quantity = 1;
+$item->unit_price = 10000; 
+$item->currency_id = "ARS";
+
+$preference->items = array($item);
+
+// 3. URLs DE RETORNO: Aquí usas tu URL de Ngrok que vimos antes.
+// Importante: ¡Si reinicias Ngrok, esta URL cambia y debes actualizarla aquí!
+$preference->back_urls = array(
+    "success" => "https://d619-2803-9810-b055-9810-7097-e1bd-2691-d34e.ngrok-free.app/apiba/pago_exitoso.php",
+    "failure" => "https://d619-2803-9810-b055-9810-7097-e1bd-2691-d34e.ngrok-free.app/apiba/pago_fallido.php"
+);
+$preference->auto_return = "approved";
+
+$preference->save();
+?>
+
+<a href="<?php echo $preference->init_point; ?>" 
+   style="background-color: #009EE3; color: white; padding: 15px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+   Pagar $10.000 con Mercado Pago
+</a>

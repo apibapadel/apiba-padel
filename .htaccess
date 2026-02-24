@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /apiba-padel/
+
+# ===============================
+# URL LIMPIA NOTICIAS
+# ===============================
+RewriteRule ^noticia/([a-zA-Z0-9-]+)/?$ public/noticia.php?slug=$1 [L,QSA]
+
+# ===============================
+# SITEMAP
+# ===============================
+RewriteRule ^sitemap\.xml$ sitemap.php [L,QSA]
+
+# ===============================
+# PROTECCIÓN BÁSICA
+# ===============================
+Options -Indexes
